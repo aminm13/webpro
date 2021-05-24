@@ -1,0 +1,50 @@
+
+<div class="loginPage">
+  <div class="signin">
+    <div class="back-img">
+      <div class="sign-in-text">
+        <h2 class="active">Sign In</h2>
+        <h2 class="nonactive">Sign Up</h2>
+      </div>
+      <!--/.sign-in-text-->
+      <div class="layer">
+      </div>
+      <!--/.layer-->
+      <p class="point">&#9650;</p>
+    </div>
+    <br />
+    <!--/.back-img-->
+    <form [formGroup]="form" (ngSubmit)="login()" class="loginForm">
+      <div class="col-10 center alert-danger" [hidden]="!error">
+        {{error}}
+      </div>
+      <!--Email-->
+      <div class="col-10">
+        <label for="inputEmail3" class="form-label">Email</label>
+        <br />
+        <input type="text" class="form-control" id="email" autocomplete="off" aria-describedby="helpId"
+          placeholder="Email" formControlName="email">
+      </div>
+      <!--Password-->
+      <div class="col-10">
+        <label for="inputPassword3" class="form-label">Password</label>
+        <br />
+        <input type="password" class="form-control" autocomplete="off" id="password" aria-describedby="helpId"
+          placeholder="Password" formControlName="password">
+      </div>
+
+      <button type="submit"
+        class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored"
+        [disabled]="form.invalid">
+        Sign In
+      </button>
+      <!--/button-->
+    </form>
+    <div class="links ">
+      <a routerLink="/request-password" class="forgot-text">Forgot Password ?</a>
+      <a routerLink="/signup" class="signup-text">Not a member yet ?</a>
+    </div>
+
+  </div>
+  <!--/.signin-->
+</div>
