@@ -30,7 +30,7 @@
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
-              "src/assets/pusher/pusher.min.js"
+              "src/assets/pusher/pusher.min.js",
             ]
           },
           "configurations": {

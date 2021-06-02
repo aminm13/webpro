@@ -1,4 +1,3 @@
-
 <div class="loginPage">
   <div class="signin">
     <div class="back-img">
@@ -15,9 +14,7 @@
     <br />
     <!--/.back-img-->
     <form [formGroup]="form" (ngSubmit)="login()" class="loginForm">
-      <div class="col-10 center alert-danger" [hidden]="!error">
-        {{error}}
-      </div>
+
       <!--Email-->
       <div class="col-10">
         <label for="inputEmail3" class="form-label">Email</label>

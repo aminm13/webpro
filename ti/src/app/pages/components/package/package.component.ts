@@ -1,29 +1,36 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { PackageServiceService } from '../../../services/package-service.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-package',
+  templateUrl: './package.component.html',
+  styleUrls: ['./package.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class PackageComponent implements OnInit {
 
+  pack = JSON.parse(localStorage.getItem('package'));
+  auth = JSON.parse(localStorage.getItem('user'));
   form: FormGroup;
 
-  constructor(private authService: AuthService,
-              private router: Router) { }
+  packName='Basic'
+  price=99
+  constructor(private PackageServiceService: PackageServiceService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.pack[0].package_id)
     this.form = new FormGroup({
-      email: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required)
+      package: new FormControl(null, Validators.required)
     });
+
   }
 
-  login() {
-    this.authService.sendLogin(this.form.value)
+
+
+  upgradePackage() {
+    this.PackageServiceService.sendUpgrade(this.form.value)
       .subscribe( (resp: any) => {
         localStorage.setItem('token', resp.token);
         localStorage.setItem('user', JSON.stringify(resp.user));

@@ -4,6 +4,9 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Role;
 use App\Qualification;
+use App\Package;
+
+
 class UserTableSeeder extends Seeder
 {
     /**
@@ -25,13 +28,23 @@ class UserTableSeeder extends Seeder
         $mathSubject= Qualification::where('name','math')->first();
 
 
-       $studentUser = User::create([
+        $student1Pack = Package::where('name','rehersaal')->first();
+        $student2Pack = Package::where('name','basic')->first();
+
+       $student1User = User::create([
         'name' => 'Amin',
         'email' => 'student1@gmail.com',
         'password' => bcrypt('pass'),
         'levelOfEdu' => 'University',
         'dob' => '1996-08-28',
         ]);
+        $student2User = User::create([
+            'name' => 'Matt',
+            'email' => 'student2@gmail.com',
+            'password' => bcrypt('pass'),
+            'levelOfEdu' => 'Primary',
+            'dob' => '2005-08-28',
+            ]);
         $tutortUser =  User::create([
             'name' => 'Elahe',
             'email' => 'tutor1@gmail.com',
@@ -47,11 +60,17 @@ class UserTableSeeder extends Seeder
             'dob' => '1996-08-28',
         ]);
 
-        $studentUser->role()->attach($studentRole);
+        $student1User->role()->attach($studentRole);
+        $student2User->role()->attach($studentRole);
+
         $tutortUser->role()->attach($tutorRole);
         $coordinatorUser->role()->attach($coordinatorRole);
 
         $tutortUser->qualifications()->attach($physicsSubject);
         $tutortUser->qualifications()->attach($mathSubject);
+
+
+        $student1User->packages()->attach($student1Pack);
+        $student2User->packages()->attach($student2Pack);
     }
 }

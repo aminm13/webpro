@@ -5,6 +5,8 @@
 * ==========================================
 *
 */
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 body {
 
   min-height: 100vh;

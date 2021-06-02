@@ -10,7 +10,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class DirectMessageEvent implements  ShouldBroadcast
+class DirectMessageEvent implements  ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -29,7 +29,7 @@ class DirectMessageEvent implements  ShouldBroadcast
         $this->response = [
             'message'   => $data['message'],
             'to'        => $data['to'],
-            'from'      => auth()->user(),
+            'from'      => auth()->user()->name,
         ];
     }
 

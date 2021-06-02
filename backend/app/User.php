@@ -46,4 +46,7 @@ class User extends Authenticatable
     public function qualifications(){
         return $this->belongsToMany('App\Qualification');
     }
+    public function packages(){
+        return $this->belongsToMany('App\Package');
+    }
 }

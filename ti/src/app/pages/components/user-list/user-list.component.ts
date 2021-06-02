@@ -18,16 +18,16 @@ export class UserListComponent implements OnInit {
   echo: Echo;
   auth: IUser = JSON.parse(localStorage.getItem('user'));
 
-  constructor( private chatService: ChatService,
-               private ts: ToastrService) {
+  constructor(private chatService: ChatService,
+    private ts: ToastrService) {
     this.echo = chatService.getSockets();
-   }
+  }
 
   ngOnInit(): void {
     this.getDirectMessage();
   }
 
-  showModal(user: IUser){
+  showModal(user: IUser) {
     if (user.id === this.auth.id) {
       return;
     }
@@ -35,14 +35,14 @@ export class UserListComponent implements OnInit {
     this.userDM = user;
   }
 
-  closeModal(){
+  closeModal() {
     this.showM = false;
   }
   sendMessage() {
     const socketsID = this.echo.socketId();
     this.closeModal();
     this.chatService.sendDirectMessage(this.textMessage, this.userDM.id, socketsID)
-      .subscribe( (resp: any) => {
+      .subscribe((resp: any) => {
         console.log(resp);
       })
     this.textMessage = '';
@@ -50,7 +50,7 @@ export class UserListComponent implements OnInit {
 
   getDirectMessage() {
     this.echo.private(`channel-direct.${this.auth.id}`)
-      .listen('DirectMessageEvent', ((resp: any ) => {
+      .listen('DirectMessageEvent', ((resp: any) => {
         this.ts.success(resp.response.message, `From: ${resp.response.from.name}`, {
           timeOut: 10000,
           positionClass: 'toast-top-center'

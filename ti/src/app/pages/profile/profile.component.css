@@ -1,0 +1,98 @@
+
+  
+  .main {
+    padding: 0px 20px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  .calendar{
+      height: 36rem;
+  }
+  .package{
+      height: 18rem;
+  }
+  .courses{
+      margin-top: 3rem;
+  }
+.courses .tutorName{
+    font: 9px;
+}
+  .day{
+      font-size: 20px;
+      width: 5rem;
+      height: 5rem;
+  }
+  .month{
+      font-size: 14px;
+      opacity: 0.7;
+      width: 5rem;
+      height: 5rem;
+  }
+  .detailedMeeting{
+      margin-top: 1rem;
+  }
+  .moreWelcome{
+      float: right;
+
+  }
+  .type{
+    margin-top: 1rem;
+}
+.welcomeUser{
+    font-size: 14px;
+    padding: 20px 20px;
+    border-bottom: Dodgerblue 1px dotted;
+    border-right: Dodgerblue 1px dotted;
+
+}
+.chatboxModal{
+    position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  padding: 0px 20px;
+
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+.modal-dialog{
+    justify-content: center;    width: 50rem;
+
+}
+.modal-dialog .modal-content{
+    margin-left: -7rem;    width: 50rem;
+
+}
+.tutors{
+    height: 18rem;
+}
+.tutor{
+    height: 6rem;
+    border-bottom: dodgerblue solid 1px;
+
+    display: block;
+}
+.tutorName{
+    font-size: 18px;
+    width: 12rem;
+    padding: 0;
+    margin-right:0 ;
+    margin-left:0 ;
+    padding-bottom: 1rem;
+}
+
+.tutor .tutorFilters {
+    display: inline-block;
+    margin-top: -1rem;
+}
+
+.tutor  .row{
+    width: 10rem;
+}
+.widener{
+    margin-bottom: 5rem;
+}

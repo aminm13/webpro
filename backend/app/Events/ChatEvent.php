@@ -28,7 +28,7 @@ class ChatEvent implements ShouldBroadcast
     {
         //
         $this->message = $message;
-        $this->from = Auth::id();
+        $this->from = Auth::user()->name;
     }
 
     /**
@@ -36,8 +36,10 @@ class ChatEvent implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
+
+
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-chat');
+        return new Channel('channel-chat');
     }
 }
