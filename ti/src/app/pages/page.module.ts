@@ -15,6 +15,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { QualificationComponent } from './components/qualification/qualification.component';
+import { TutorFilterComponent } from './components/tutor-filter/tutor-filter.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { QualificationComponent } from './components/qualification/qualification
     ProfileComponent,
     PackageComponent,
     CalendarComponent,
-    QualificationComponent
+    QualificationComponent,
+    TutorFilterComponent
   ],
   imports: [
     CommonModule,
