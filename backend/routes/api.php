@@ -33,5 +33,8 @@ Route::post('message/sendDM', 'Api\MessageController@sendDM')
     ->name('api.message.sendDM')
     ->middleware('auth:api');
 
-Route::get('filter/filter', 'Api\FilterController@filter')
+Route::get('filter/getAll', 'Api\FilterController@getAll')
+    ->name('api.filter.filter');
+
+Route::Post('filter/filter', 'Api\FilterController@filter')
     ->name('api.filter.filter');

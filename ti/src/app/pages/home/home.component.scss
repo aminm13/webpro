@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+$gr-1:linear-gradient(170deg, #01E4F8 0%, #1D3EDE 100%);
+$gr-2:linear-gradient(170deg, #B4EC51 0%, #429321 100%);
+$gr-3:linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
+
+.gr-1{background: $gr-1;}
+.gr-2{background: $gr-2;}
+.gr-3{background: $gr-3;}
+
+.welcome {
+    background-image: url('../../../assets/img/sWelcome.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+    
+}
+.ti{ 
+    
+    margin-top: 10rem;
+    padding: 5rem;
+    color: #eee;
+    border-left: #eee 0.2rem solid;
+    border-top: #eee 0.1rem solid;
+
+
+}
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.5;
+  text-align: center;
+  background-color: #333;
+  border: none;
+  color: #999;
+}
+.content{
+    text-align: center;
+    margin-top: 5rem;
+}
+.content a{
+    color: #fff;
+}
+.howItWorks{
+    background-color: transparent;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    color: #666;
+    border-radius: 50%;
+}
+
+
+.card{
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    width: 18rem;
+}
+.card-header{
+    background-color: transparent;
+    text-decoration: none;
+    height: 2rem;
+    color: #555;
+    font-size: 24px;
+    border-bottom: #444 dotted 0.1rem;
+}
+.card-body{
+    font: medium;
+    background-color: transparent;
+    text-decoration: none;
+    text-align:center;
+    height: 7rem;
+    font-size: 14px;
+    margin-top: 1rem;
+
+}
+
+.whyUs{
+    background-color: transparent;
+    text-align: end;
+    color: #666;
+    border-radius: 50%;
+    display: inline-block;
+}
+.whyUsPic{
+    margin-right: 10rem;
+    width: 25rem;
+    height: 15rem;
+}
+
+.reasons{
+    text-align: center;
+}
+.reasons{
+    text-align: start;
+    font-size: smaller;
+}
+
+.aboutUs{
+    font-size: 24px;
+    background-color: transparent;
+    text-align: start;
+    color: #666;
+}
+.aboutUsHeader{}
+.aboutUscards{
+margin-left: 20rem;
+
+}
+.aboutUscard{
+    border: solid black 10px;
+    height: 20rem;
+    width: 18rem;
+}
+
+.aboutUscard .card-img-top {
+    margin: 0%;
+    width: 18rem;
+}

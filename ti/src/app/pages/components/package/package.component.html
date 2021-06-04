@@ -4,19 +4,23 @@
         <div class="row">
             
         <div class="txt col-6">
-            <h1 > {{packName}}</h1>
+            <h1 id="packName"> {{packName}}</h1>
             <h5> <small>{{auth.levelOfEdu}}</small> </h5>
+            
 
             <h4> {{price}} $  </h4>
         </div>
         <div class="col-6">
-        <a class="btnUpgrade" href="#">
-            <h4>
-                Upgarde Now!
-            </h4>
-        </a>
+            <form class="form-group" method="POST">
+                <button class="form-control" class="btnUpgrade" (click)="studentUpgrade()">
+                    <h4>
+                        Upgarde Now!
+                    </h4>
+                </button>
+            </form>
         </div>
         </div>
+
     </div>
 </div>
 

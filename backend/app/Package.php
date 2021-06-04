@@ -8,6 +8,6 @@ class Package extends Model
 {
     //
     public function qualification(){
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User','package_user');
     }
 }

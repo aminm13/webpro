@@ -1,0 +1,213 @@
+<app-navbar></app-navbar>
+<div class="container align-self-center">
+
+<div class="row md-2">
+    <div class="col-6">
+        <div class="card gr-1">
+            <div class="txt">
+                <h1>Selected Package</h1>
+                <hr/>
+            </div>
+            <h3><strong>Basic</strong></h3>
+            <h3>60$</h3>
+            <ul>
+                <li> Small groups </li>
+                <li>
+                    Maximum 5 students
+                </li>
+                <li>
+                    Cheaper option
+                </li>
+                <li>
+                    5 hour pack
+                </li>
+                <li>
+                    Up to 1 subject
+                </li>
+                <li>
+                    28 days of validity
+                </li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <p>Please input your payment information</p>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="card-number">Card Number</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
+                <div class="col-sm-9">
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
+                        <option>Month</option>
+                        <option value="01">Jan (01)</option>
+                        <option value="02">Feb (02)</option>
+                        <option value="03">Mar (03)</option>
+                        <option value="04">Apr (04)</option>
+                        <option value="05">May (05)</option>
+                        <option value="06">June (06)</option>
+                        <option value="07">July (07)</option>
+                        <option value="08">Aug (08)</option>
+                        <option value="09">Sep (09)</option>
+                        <option value="10">Oct (10)</option>
+                        <option value="11">Nov (11)</option>
+                        <option value="12">Dec (12)</option>
+                      </select>
+                    </div>
+                    <div class="col-xs-3">
+                      <select class="form-control" name="expiry-year">
+                        <option value="13">2013</option>
+                        <option value="14">2014</option>
+                        <option value="15">2015</option>
+                        <option value="16">2016</option>
+                        <option value="17">2017</option>
+                        <option value="18">2018</option>
+                        <option value="19">2019</option>
+                        <option value="20">2020</option>
+                        <option value="21">2021</option>
+                        <option value="22">2022</option>
+                        <option value="23">2023</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+
+    </div>
+    <div class="col-6">
+        <div class="loginPage">
+            <div class="signin">
+              <div class="back-img">
+                <div class="sign-in-text">
+                  <h2 class="active">Sign Up</h2>
+                  <h2 class="nonactive">Sign In</h2>
+                </div>
+                <!--/.sign-in-text-->
+                <div class="layer">
+                </div>
+                <!--/.layer-->
+                <p class="point">&#9650;</p>
+              </div>
+              <br />
+              <!--/.back-img-->
+              <form #signUpForm=ngForm  class="loginForm">
+
+                <!--Name-->
+                <div class="col-10">
+                  <label class="form-label">Full name</label>
+                  <br />
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" id="inputfName" placeholder="Last name" name="fname"
+                         required>
+                    </div>
+                    <div class="col"><input type="text" class="form-control" id="inputlName" placeholder="Last name" name="lname"
+                        required>
+                    </div>
+                  </div>
+                </div>
+                <!--Email-->
+                <div class="col-10">
+          
+                  <label for="inputEmail3" class="form-label">Email</label>
+                  <br />
+                  <input type="email" class="form-control" id="inputEmail3" name="email"required>
+          
+                </div>
+                <!--DOB-->
+                <div class="col-10">
+                  <label for="inputDob3" class="form-label">Date of birth</label>
+                  <br />
+                  <input type="date" class="form-control" id="inputDob3" name="dob"  required>
+                </div>
+                <!--Role-->
+                <div class="col-10">
+                  <label>Role</label>
+          
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Student</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Tutor</label>
+                  </div>
+                </div>
+                <!--Password-->
+                <div class="col-10">
+          
+                  <label class="form-label">Password</label>
+                  <br />
+                  <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password"
+                     required>
+          
+                </div>
+                <!--Confirm Password-->
+                <div class="col-10">
+                  <label for="inputPasswordConfirmation3" class="form-label">Confirm Password</label>
+                  <br />
+                  <input type="password" name="password_confirmation" class="form-control" id="inputPasswordConfirmation3"
+                    placeholder="Password Confirmation" required>
+                </div>
+                <!--Edu level-->
+                <div class="col-10 ">
+                  <label>Choose your educationl level</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="eduLevel" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                      Primary
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="eduLevel" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Secondary
+                    </label>
+                  </div>
+                  <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="eduLevel" id="exampleRadios3" value="option3">
+                    <label class="form-check-label" for="exampleRadios3">
+                      University
+                    </label>
+                  </div>
+                </div>
+                <!--Country-->
+                <div class="col-10">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect2">Choose your country</label>
+                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                      <option>Argentine</option>
+                      <option>Peru</option>
+                      <option>Ecuador</option>
+                    </select>
+                  </div>
+                </div>
+          
+                <button type="submit"
+                  class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored"
+                  >
+                  Sign In
+                </button>
+                <!--/button-->
+              </form>
+              <div class="links ">
+                <a href="/login" class="signup-text">Already a member ?</a>
+              </div>
+          
+            </div>
+            <!--/.signin-->
+          </div>
+    </div>
+    
+
+</div>
+
+</div>

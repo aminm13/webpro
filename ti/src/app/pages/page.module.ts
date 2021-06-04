@@ -15,6 +15,12 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { QualificationComponent } from './components/qualification/qualification.component';
+import { TutorFilterComponent } from './components/tutor-filter/tutor-filter.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { EcuPackagesComponent } from './ecu-packages/ecu-packages.component';
+import { SelectPackComponent } from './select-pack/select-pack.component';
+import { AvailablePacksComponent } from './available-packs/available-packs.component';
 
 
 @NgModule({
@@ -26,7 +32,13 @@ import { QualificationComponent } from './components/qualification/qualification
     ProfileComponent,
     PackageComponent,
     CalendarComponent,
-    QualificationComponent
+    QualificationComponent,
+    TutorFilterComponent,
+    HomeComponent,
+    NavbarComponent,
+    SelectPackComponent,
+    EcuPackagesComponent,
+    AvailablePacksComponent,
   ],
   imports: [
     CommonModule,

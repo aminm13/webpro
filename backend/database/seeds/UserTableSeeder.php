@@ -26,6 +26,8 @@ class UserTableSeeder extends Seeder
 
         $physicsSubject = Qualification::where('name','physics')->first();
         $mathSubject= Qualification::where('name','math')->first();
+        $advancedPhysicsSubject = Qualification::where('name','advanced physics')->first();
+        $bilogySubject= Qualification::where('name','biology')->first();
 
 
         $student1Pack = Package::where('name','rehersaal')->first();
@@ -45,13 +47,43 @@ class UserTableSeeder extends Seeder
             'levelOfEdu' => 'Primary',
             'dob' => '2005-08-28',
             ]);
-        $tutortUser =  User::create([
-            'name' => 'Elahe',
+        $tutor1User =  User::create([
+            'name' => 'Elahe2',
             'email' => 'tutor1@gmail.com',
             'password' => bcrypt('pass'),
             'levelOfEdu' => 'University',
             'dob' => '1996-08-28',
         ]);
+        $tutor2User =  User::create([
+            'name' => 'Elahe2',
+            'email' => 'tutor2@gmail.com',
+            'password' => bcrypt('pass'),
+            'levelOfEdu' => 'University',
+            'dob' => '1996-08-28',
+        ]);
+        $tutor3User =  User::create([
+            'name' => 'Elahe3',
+            'email' => 'tutor3@gmail.com',
+            'password' => bcrypt('pass'),
+            'levelOfEdu' => 'University',
+            'dob' => '1996-08-28',
+        ]);
+
+        $tutor4User =  User::create([
+            'name' => 'Elahe4',
+            'email' => 'tutor4@gmail.com',
+            'password' => bcrypt('pass'),
+            'levelOfEdu' => 'University',
+            'dob' => '1996-08-28',
+        ]);
+        $tutor5User =  User::create([
+            'name' => 'Elahe5',
+            'email' => 'tutor5@gmail.com',
+            'password' => bcrypt('pass'),
+            'levelOfEdu' => 'University',
+            'dob' => '1996-08-28',
+        ]);
+
         $coordinatorUser = User::create([
             'name' => 'John',
             'email' => 'coordinator1@gmail.com',
@@ -63,11 +95,29 @@ class UserTableSeeder extends Seeder
         $student1User->role()->attach($studentRole);
         $student2User->role()->attach($studentRole);
 
-        $tutortUser->role()->attach($tutorRole);
+        $tutor1User->role()->attach($tutorRole);
+        $tutor2User->role()->attach($tutorRole);
+        $tutor3User->role()->attach($tutorRole);
+        $tutor4User->role()->attach($tutorRole);
+        $tutor5User->role()->attach($tutorRole);
+
         $coordinatorUser->role()->attach($coordinatorRole);
 
-        $tutortUser->qualifications()->attach($physicsSubject);
-        $tutortUser->qualifications()->attach($mathSubject);
+        $tutor1User->qualifications()->attach($physicsSubject);
+        $tutor1User->qualifications()->attach($mathSubject);
+
+        $tutor2User->qualifications()->attach($physicsSubject);
+        $tutor2User->qualifications()->attach($advancedPhysicsSubject);
+
+
+        $tutor3User->qualifications()->attach($advancedPhysicsSubject);
+        $tutor3User->qualifications()->attach($bilogySubject);
+
+        $tutor4User->qualifications()->attach($advancedPhysicsSubject);
+        $tutor4User->qualifications()->attach($bilogySubject);
+
+        $tutor5User->qualifications()->attach($advancedPhysicsSubject);
+        $tutor5User->qualifications()->attach($bilogySubject);
 
 
         $student1User->packages()->attach($student1Pack);

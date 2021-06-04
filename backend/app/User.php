@@ -41,12 +41,12 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('App\Role','role_user');
     }
     public function qualifications(){
-        return $this->belongsToMany('App\Qualification');
+        return $this->belongsToMany('App\Qualification','qualification_user');
     }
     public function packages(){
-        return $this->belongsToMany('App\Package');
+        return $this->belongsToMany('App\Package','package_user');
     }
 }

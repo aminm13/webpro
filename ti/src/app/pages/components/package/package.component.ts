@@ -12,9 +12,10 @@ export class PackageComponent implements OnInit {
 
   pack = JSON.parse(localStorage.getItem('package'));
   auth = JSON.parse(localStorage.getItem('user'));
+  
   form: FormGroup;
 
-  packName='Basic'
+  packName='GROUP PACK'
   price=99
   constructor(private PackageServiceService: PackageServiceService,
     private router: Router) { }
@@ -24,10 +25,17 @@ export class PackageComponent implements OnInit {
     this.form = new FormGroup({
       package: new FormControl(null, Validators.required)
     });
+    
+
+    console.log(this.pack[0]['package_id'])
 
   }
 
 
+  studentUpgrade(){
+    document.getElementById('packName').innerText = ''
+    document.getElementById('packName').innerText = 'INDIVIDUAL PACK'
+  }
 
   upgradePackage() {
     this.PackageServiceService.sendUpgrade(this.form.value)

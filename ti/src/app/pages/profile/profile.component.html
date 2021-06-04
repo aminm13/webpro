@@ -2,21 +2,28 @@
 
 
 <div class="main">
-    <div class="welcomeUser">
-        Welcome <strong>{{auth.name}}</strong> 
-        <div class="moreWelcome">
-            <span style="font-size: 1rem;">
-                <i class="fas fa-bell"></i>
-              </span>
-            <a href="editProfile" style="padding-left: 1rem;"><img src="../../../assets/img/studentpp.jpg" class="rounded" style="width: 2rem; height: 2rem; border-radius: 1rem;" alt=""></a>
-            <a class="link" routerLink="/login">Logout</a>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li class="welcomeRight"> <a href="editProfile" style="padding-left: 1rem;"><img
+                                src="../../../assets/img/studentpp.jpg" class="rounded"
+                                style="width: 2rem; height: 2rem; border-radius: 1rem;" alt=""></a>
+                        Welcome <strong>{{auth.name}}</strong>
+                    </li>
+                    <li><span style="font-size: 1rem;">
+                            <i class="fas fa-bell"></i>
+                        </span></li>
+                        <li><a class="link" href="/chat">Messages</a></li>
 
+                    <li><a class="link" routerLink="/login">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <script>
 
-   
-
-
+    </script>
 
     <div class="row">
         <div class="col-4">
@@ -30,112 +37,7 @@
                 <div class="package widener" *ngIf="showCoordinator">
                     <div class="card-title p-2 bg-dark text-white">Available teachers:</div>
                     <div class="card-body overflow-auto tutors">
-                        <div class="filterTutotrs" >
-                            Please input student's ID:
-                            <br/>
-                            <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                            
-                        </div>
-                        <div class="messageBar" *ngIf="showAdded">
-                            Student was added successfuly
-                        </div>
-                        <hr/>
-                        <div class="tutor">
-                            <div class="tutorName">Adam V.d Merve</div>
-                            <button onclick="addStudent()" class="btn btn-info ">Choose</button>
-                            <div class="row float-right">    
-                            <div class="tutorFilters  ">
-                                <div class="row">
-                                    <div class="col-1"><span class="badge badge-secondary"><i class="fas fa-divide"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-primary"><i class="fas fa-cogs"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-success"><i class="fas fa-ruler-triangle"></i></span></div>
-                                </div>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row float-right">
-                                <div class="tutorFilters ">
-                                    <div class="row">
-                                        <div class="col-1"><span class="badge badge-light"><i class="fal fa-school"></i></span></div>
-                                        <div class="col-1"><span class="badge badge-light"><i class="far fa-tachometer-fastest"></i>></span></div>
-    
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>                
-                        <div class="tutor">
-                            <div class="tutorName">Niko Bellik</div>
-                            <button class="btn btn-info ">Choose</button>
-                            <div class="row float-right">    
-                            <div class="tutorFilters  ">
-                                <div class="row">
-                                    <div class="col-1"><span class="badge badge-secondary"><i class="fas fa-divide"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-primary"><i class="fas fa-cogs"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-success"><i class="fas fa-ruler-triangle"></i></span></div>
-                                </div>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row float-right">
-                                <div class="tutorFilters ">
-                                    <div class="row">
-                                        <div class="col-1"><span class="badge badge-light"><i class="fal fa-school"></i></span></div>
-                                        <div class="col-1"><span class="badge badge-light"><i class="far fa-tachometer-fastest"></i>></span></div>
-    
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>                
-                        <div class="tutor">
-                            <div class="tutorName">John Lara</div>
-                            <button class="btn btn-info ">Choose</button>
-                            <div class="row float-right">    
-                            <div class="tutorFilters  ">
-                                <div class="row">
-                                    <div class="col-1"><span class="badge badge-secondary"><i class="fas fa-divide"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-primary"><i class="fas fa-cogs"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-success"><i class="fas fa-ruler-triangle"></i></span></div>
-                                </div>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row float-right">
-                                <div class="tutorFilters ">
-                                    <div class="row">
-                                        <div class="col-1"><span class="badge badge-light"><i class="fal fa-school"></i></span></div>
-                                        <div class="col-1"><span class="badge badge-light"><i class="far fa-tachometer-fastest"></i>></span></div>
-    
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>                
-                        <div class="tutor">
-                            <div class="tutorName">Adam V.d Merve</div>
-                            <button class="btn btn-info ">Choose</button>
-                            <div class="row float-right">    
-                            <div class="tutorFilters  ">
-                                <div class="row">
-                                    <div class="col-1"><span class="badge badge-secondary"><i class="fas fa-divide"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-primary"><i class="fas fa-cogs"></i></span></div>
-                                    <div class="col-1"><span class="badge badge-success"><i class="fas fa-ruler-triangle"></i></span></div>
-                                </div>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row float-right">
-                                <div class="tutorFilters ">
-                                    <div class="row">
-                                        <div class="col-1"><span class="badge badge-light"><i class="fal fa-school"></i></span></div>
-                                        <div class="col-1"><span class="badge badge-light"><i class="far fa-tachometer-fastest"></i>></span></div>
-    
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>                        
+                        <app-tutor-filter></app-tutor-filter>
                     </div>
 
                 </div>
@@ -147,107 +49,74 @@
                         <p><strong class="bg-dark text-white">Basic Math</strong></p>
                         <p>By <strong class="tutorName">Adam V.d Merve</strong></p>
                     </div>
-                    <hr/>
+                    <hr />
                     <div class="card-body">
                         <p><strong class="bg-dark text-white">Basic Physics</strong></p>
                         <p>By <strong class="tutorName">Edgarads V.d Zeeland</strong></p>
                     </div>
 
 
-                </div> 
-                    
+                </div>
+
                 <div class="courses" *ngIf="showCoordinator">
                     <div class=" p-2 bg-warning text-white">Upcoming Meetings:</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <div class="meeting">
-                            <div class="d-inline">
-                                    <strong class="d-inline p-2 bg-dark text-white day">2</strong><div class="d-inline p-2 bg-dark text-white month">Feb</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="meeting">
+                                    <div class="d-inline">
+                                        <strong class="d-inline p-2 bg-dark text-white day">2</strong>
+                                        <div class="d-inline p-2 bg-dark text-white month">Feb</div>
+                                    </div>
+                                    <div class="detailedMeeting">
+                                        <div class="with"><small>Student:</small><strong>Sedrick Bennon</strong></div>
+                                        <div class="meetingInfo">
+                                            <ul class="points">
+                                                <li>General Q&A</li>
+                                                <li>General Guidance</li>
+                                                <li>individual study progress disscussion</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="meeting">
+                                <div class="d-inline">
+                                    <strong class="d-inline p-2 bg-dark text-white day">4</strong>
+                                    <div class="d-inline p-2 bg-dark text-white month">Feb</div>
+                                </div>
                                 <div class="detailedMeeting">
-                                    <div class="with"><small>Student:</small><strong>Sedrick Bennon</strong></div>
+                                    <div class="with"><small>Student:</small><strong>Nick James</strong></div>
                                     <div class="meetingInfo">
                                         <ul class="points">
                                             <li>General Q&A</li>
-                                            <li>General Guidance</li>
                                             <li>individual study progress disscussion</li>
                                         </ul>
                                     </div>
                                 </div>
-                        </div>
-                    </div>
-
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="meeting">
-                        <div class="d-inline">
-                                <strong class="d-inline p-2 bg-dark text-white day">4</strong><div class="d-inline p-2 bg-dark text-white month">Feb</div>
-                        </div>
-                            <div class="detailedMeeting">
-                                <div class="with"><small>Student:</small><strong>Nick James</strong></div>
-                                <div class="meetingInfo">
-                                    <ul class="points">
-                                        <li>General Q&A</li>
-                                        <li>individual study progress disscussion</li>
-                                    </ul>
-                                </div>
                             </div>
+                        </div>
                     </div>
-                </div>   
-            </div>
-                </div>           
+                </div>
             </div>
 
         </div>
-        
+
         <div class="col-8" *ngIf="showStudent">
             <app-calendar></app-calendar>
-              </div>
+        </div>
         <div class="col-8" *ngIf="showTutor">
             <app-calendar></app-calendar>
-        
-        </div>
-        <div class="col-8" *ngIf="showCoordinator" >
-        <div class=" p-2 bg-dark text-white noPadding">Chat with your student anywhere now!</div>
-        <app-chat></app-chat>
 
         </div>
-    
+        <div class="col-8" *ngIf="showCoordinator">
+            <app-calendar></app-calendar>
+        </div>
+
+    </div>
+
 </div>
-<!-- First modal dialog -->
-<div class="modal fade " id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1" *ngIf="showStudent || showTutor">
-    <div class="modal-dialog modal-dialog-centered">
-        <app-chat></app-chat>
-    </div>
-  </div>
-  <!-- Open first dialog -->
-  <a class="btn chatboxModal" data-bs-toggle="modal" href="#modal" role="button" *ngIf="showStudent || showTutor">Chat Now</a>
-</div>
-
-
-
-<ng-template #modalContent let-close="close">
-    <div class="modal-header">
-      <h5 class="modal-title">Event action occurred</h5>
-      <button type="button" class="close" (click)="close()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div>
-        Action:
-        <pre>{{ modalData?.action }}</pre>
-      </div>
-      <div>
-        Event:
-        <pre>{{ modalData?.event | json }}</pre>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-secondary" (click)="close()">
-        OK
-      </button>
-    </div>
-  </ng-template>
