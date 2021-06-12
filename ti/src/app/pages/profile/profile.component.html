@@ -1,29 +1,23 @@
 <!-- {{q[0].qualification_id}} -->
-
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="profileNav">
+    <a class="navbar-brand" href="#"><a href="editProfile" style="padding-left: 1rem;"><img
+        src="../../../assets/img/studentpp.jpg" class="rounded"
+        style="width: 2rem; height: 2rem; border-radius: 1rem;" alt=""></a>
+Welcome back {{auth.name}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/chat">Messages</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <a class="nav-link" routerLink="/login">Logout</a>      </span>
+    </div>
+  </nav>
 <div class="main">
-    <header>
-        <nav>
-            <div class="menu">
-                <ul>
-                    <li class="welcomeRight"> <a href="editProfile" style="padding-left: 1rem;"><img
-                                src="../../../assets/img/studentpp.jpg" class="rounded"
-                                style="width: 2rem; height: 2rem; border-radius: 1rem;" alt=""></a>
-                        Welcome <strong>{{auth.name}}</strong>
-                    </li>
-                    <li><span style="font-size: 1rem;">
-                            <i class="fas fa-bell"></i>
-                        </span></li>
-                        <li><a class="link" href="/chat">Messages</a></li>
-
-                    <li><a class="link" routerLink="/login">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <script>
-
-    </script>
 
     <div class="row">
         <div class="col-4">

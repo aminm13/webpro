@@ -124,6 +124,10 @@ export class TutorFilterComponent implements OnInit {
         var i;
 
         var div = document.getElementById("tutor");
+
+        div.innerHTML = ''
+        div.innerHTML += `<div> <p class="alert alert-success" >Selected Tutors</p>`
+
         for (i = 0; i < data['tutors'].length; i++) {
           const tempTutor = data['tutors'][i]
 
@@ -193,6 +197,8 @@ export class TutorFilterComponent implements OnInit {
           `
 
         }
+
+        div.innerHTML += `</div>`
 
       },
       err => {

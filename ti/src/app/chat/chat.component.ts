@@ -30,6 +30,9 @@ export class ChatComponent implements OnInit {
   ) {
 
     this.echo = chatService.getSockets();
+    console.log(this.echo)
+    console.log(this.echo.socketId())
+
   }
 
   ngOnInit(): void {
@@ -37,7 +40,6 @@ export class ChatComponent implements OnInit {
 
 
 
-    console.log(this.echo.socketId())
     this.echo.join('channel-chat')
       .here((users) => {
         this.userList = users;
@@ -85,9 +87,9 @@ export class ChatComponent implements OnInit {
         this.inputMessage = '';
         this.messages.push(message);
         console.log(this.userList)
-        console.log(this.messages)
         this.scrollBottom();
       });
+      console.log(this.messages)
 
   }
 
