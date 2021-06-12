@@ -1,3 +1,4 @@
+
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { FiltertutorService } from '../../../services/filtertutor.service';
@@ -5,14 +6,12 @@ import { environment } from 'src/environments/environment';
 import { stringify } from '@angular/compiler/src/util';
 import { IUser } from 'src/app/insterfaces/chat';
 
-
 @Component({
   selector: 'app-tutor-filter',
   templateUrl: './tutor-filter.component.html',
   styleUrls: ['./tutor-filter.component.css']
 })
 export class TutorFilterComponent implements OnInit {
-
   constructor(private filterService: FiltertutorService) { }
 
   TutorList: IUser[];
