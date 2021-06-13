@@ -48,7 +48,7 @@ class UserTableSeeder extends Seeder
             'dob' => '2005-08-28',
             ]);
         $tutor1User =  User::create([
-            'name' => 'Elahe2',
+            'name' => 'Elahe',
             'email' => 'tutor1@gmail.com',
             'password' => bcrypt('pass'),
             'levelOfEdu' => 'University',

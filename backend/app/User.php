@@ -49,4 +49,5 @@ class User extends Authenticatable
     public function packages(){
         return $this->belongsToMany('App\Package','package_user');
     }
+
 }

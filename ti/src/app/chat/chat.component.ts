@@ -89,6 +89,8 @@ export class ChatComponent implements OnInit {
         console.log(this.userList)
         this.scrollBottom();
       });
+      console.log(this.echo.socketId())
+
       console.log(this.messages)
 
   }
