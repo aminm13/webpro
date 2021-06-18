@@ -21,11 +21,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('auth/register', 'Api\AuthController@register')->name('api.auth.register');
 Route::post('auth/login', 'Api\AuthController@login')->name('api.auth.login');
+
 Route::get('auth/me', 'Api\AuthController@me')
     ->name('api.auth.me')
     ->middleware('auth:api');
+    
+Route::post('auth/editProfile', 'Api\AuthController@editProfile')
+    ->name('api.auth.editProfile')
+    ->middleware('auth:api');
 
-Route::post('message/send', 'Api\MessageController@send')
+Route::post('auth/updatePackage', 'Api\AuthController@updatePackage')
+    ->name('api.auth.updatePackage')
+    ->middleware('auth:api');
+
+    Route::post('message/send', 'Api\MessageController@send')
     ->name('api.message.send')
     ->middleware('auth:api');
 
@@ -36,5 +45,21 @@ Route::post('message/sendDM', 'Api\MessageController@sendDM')
 Route::get('filter/getAll', 'Api\FilterController@getAll')
     ->name('api.filter.filter');
 
+Route::get('filter/getAllStudents', 'Api\FilterController@getAllStudents')
+    ->name('api.filter.getAllStudents');
+    
+
 Route::Post('filter/filter', 'Api\FilterController@filter')
     ->name('api.filter.filter');
+
+    Route::Post('filter/assign', 'Api\FilterController@assign')
+    ->name('api.filter.assign');
+    
+    Route::Post('filter/writeReview', 'Api\FilterController@writeReview')
+    ->name('api.filter.writeReview');
+    
+    Route::get('filter/getAllReviewsT', 'Api\FilterController@getAllReviewsT')
+    ->name('api.filter.getAllReviewsT');
+
+    Route::get('filter/getAllReviewsS', 'Api\FilterController@getAllReviewsS')
+    ->name('api.filter.getAllReviewsS');

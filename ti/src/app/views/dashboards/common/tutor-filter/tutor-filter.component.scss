@@ -1,0 +1,41 @@
+.card{
+    min-height:10vh;
+    padding: 1.7rem 1.2rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 0;
+    color:rgba(0,0,0,1);
+    letter-spacing: .05rem;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0 0 10px rgba(0,0,0,.27);
+}
+.tutors{
+    height: 18rem;
+}
+.tutor{
+    height: 6rem;
+    width: 10rem;
+    border-bottom: dodgerblue solid 1px;
+
+    display: block;
+}
+.tutorName{
+    font-size: 18px;
+    width: 12rem;
+    padding: 0;
+    margin-right:0 ;
+    margin-left:0 ;
+    padding-bottom: 1rem;
+}
+
+.tutor .tutorFilters {
+    display: inline-block;
+    margin-top: -1rem;
+}
+
+.tutor  .row{
+    width: 10rem;
+}
+.courses .tutorName{
+    font: 9px;
+}

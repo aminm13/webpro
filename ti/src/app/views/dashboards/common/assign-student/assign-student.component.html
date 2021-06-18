@@ -1,0 +1,27 @@
+<div class=" special">
+    <div id="student">
+
+    </div>
+    <hr />
+    <div class="assignCard" *ngIf="showCoordinator">
+        <div class="card-title p-2 bg-info text-white">Assign Student to tutors</div>
+
+        <form class="form-group" method="POST">
+
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Chosse Student</option>
+                <option value="1">{{TutorList['student'][0]['name']}}</option>
+                <option value="2">{{TutorList['student'][1]['name']}}</option>
+            </select>
+            <hr />
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Chosse Tutor</option>
+                <option value="1">{{TutorsList['tutors'][0]['name']}}</option>
+                <option value="2">{{TutorsList['tutors'][1]['name']}}</option>
+                <option value="2">{{TutorsList['tutors'][2]['name']}}</option>
+            </select>
+            <button class="btn btn-primary btn-sm" (click)="assign()">Assign</button>
+        </form>
+    </div>
+
+</div>

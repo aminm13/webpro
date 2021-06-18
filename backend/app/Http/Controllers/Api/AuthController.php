@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequestUser;
 use App\Http\Requests\RegisterRequestUser;
+use App\Http\Requests\EditProfileRequest;
+use App\Http\Requests\UpdatePckageRequest;
+
 use App\User;
 use App\Role;
 use App\Qualification;
@@ -35,6 +38,70 @@ class AuthController extends Controller
         ]);
     }
 
+    public function updatePackage(UpdatePckageRequest $request){
+
+        $userId = Auth::id();
+        $package =DB::table('package_user')
+        ->where(['user_id' => 1])->get();
+
+        $package->package_id = $request['package_id'];
+
+
+        $package->save();
+        // $package = DB::table('package_user')
+        // ->select('package_id')
+        // ->where(['user_id' => Auth::id()])
+        // ->get();
+        
+
+        // $package+1;
+
+        if($role && $package){
+            return response()->json([
+                'ok'    => true,
+                'user'  => Auth::user(),
+                'token' => $token,
+                'role'=>$role,
+                'package'=>$package,
+                'qualification' =>$qualification
+            ]);
+        }else{
+            return response()->json([
+                'ok'    => true,
+                'user'  => Auth::user(),
+                'token' => $token
+            ]);
+        }
+    }
+
+    public function editProfile(EditProfileRequest $request){
+        $user = User::find(1);
+
+        $user->name = $request['name'];
+        $user->dob = $request['dob'];
+        $user->levelOfEdu = $request['levelOfEdu'];
+
+        $user->save();
+        
+        
+       
+        if($role && $package){
+            return response()->json([
+                'ok'    => true,
+                'user'  => Auth::user(),
+                'token' => $token,
+                'role'=>$role,
+                'package'=>$package,
+                'qualification' =>$qualification
+            ]);
+        }else{
+            return response()->json([
+                'ok'    => true,
+                'user'  => Auth::user(),
+                'token' => $token
+            ]);
+        }
+    }
     public function login(LoginRequestUser $request) {
 
         $data = $request->only('email', 'password');

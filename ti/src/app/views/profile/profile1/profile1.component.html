@@ -1,0 +1,58 @@
+<div class="row">
+
+    <!--Card-->
+
+    <!--Card image-->
+    <!-- <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" class="img-fluid">
+            <a>
+                <div class="mask"></div>
+            </a>
+        </div> -->
+    <!--/Card image-->
+
+    <!--Card content-->
+    <mdb-card-body class="text-center">
+        <!--Title-->
+        <!-- Default form subscription -->
+        <form [formGroup]="form" (ngSubmit)="editProfile()" #editProfileForm
+            class="text-center border border-light p-5">
+
+            <p class="h4 mb-4">Edit Profile</p>
+            <!-- Email -->
+            <label>Email</label>
+            <input formControlName="email" type="text" id="email" class="form-control mb-4"
+                placeholder="{{auth.email}}">
+
+            <!-- Name -->
+            <label>Name</label>
+            <input formControlName="name" type="text" id="name" class="form-control mb-4" placeholder="{{auth.name}}">
+            <!-- DOB -->
+            <label>Date Of Birth</label>
+            <input formControlName="dob" type="date" id="dob" class="form-control mb-4" placeholder="{{auth.dob}}">
+
+            <!-- level -->
+            <label>Level Of Education</label>
+            <input formControlName="levelOfEdu" type="text" id="levelOfEdu" class="form-control mb-4"
+                placeholder="{{auth.levelOfEdu}}">
+
+
+            <!-- Phone -->
+            <label>About You</label>
+            <textarea type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4"
+                placeholder="About You"> </textarea>
+
+
+            <!-- Sign in button -->
+            <button mdbBtn color="info" block="true" type="submit">Save</button>
+
+
+        </form>
+        <!-- Default form subscription -->
+
+    </mdb-card-body>
+    <!--/.Card content-->
+
+    <!--/.Card-->
+
+</div>

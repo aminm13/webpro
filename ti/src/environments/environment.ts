@@ -3,11 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  urlBase: `http://localhost:8000`,
-  pusher_key: `1234ASD`,
-  pusher_cluster: `mt1`,
-  pusher_host: `localhost:8000`
+  production: false
 };
 
 /*

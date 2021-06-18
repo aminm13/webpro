@@ -1,0 +1,40 @@
+<div class="card-title p-2 gr-1 ">
+    <h5>Current Package:</h5>
+</div>
+<section class="mt-lg-5">
+
+    <!--Grid row-->
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-xl-3 col-md-6 mb-r">
+
+            <!--Card-->
+
+            <div class="card-body ">
+                <!--Card Data-->
+                <div class="admin-up">
+                    <div class="data">
+                        <p>Price:$2000</p>
+                        <h4><strong>{{packName}}</strong></h4>
+                    </div>
+                </div>
+                <p class="card-text">{{auth.levelOfEdu}}</p>
+                <!--/.Card Data-->
+                <form class="form-group" method="POST">
+                    <button class="form-control" mdbBtn color="primary" class="waves-light" class="btnUpgrade"
+                        (click)="updateShow()">
+                        <h4>
+                            Upgarde Now!
+                        </h4>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+</section>

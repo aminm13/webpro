@@ -1,0 +1,59 @@
+<div class="row">
+
+    <!--Card-->
+
+    <!--Card image-->
+    <!-- <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" class="img-fluid">
+            <a>
+                <div class="mask"></div>
+            </a>
+        </div> -->
+    <!--/Card image-->
+
+    <!--Card content-->
+    <mdb-card-body class="text-center">
+        <!--Title-->
+        <!-- Default form subscription -->
+        <form [formGroup]="form" (ngSubmit)="editProfile()" #editProfileForm
+            class="text-center border border-light p-5">
+
+
+            <!-- Name -->
+            <label>Choose your next journey!</label>
+            <hr />
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Dynamic Pckages
+            </label>
+            <br />
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Ideal Packages
+            </label>
+            <hr />
+            <label for="ccnumber">Credit Card Number</label>
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="mdi mdi-credit-card"></i>
+                    </span>
+                </div>
+            </div>
+            <hr />
+            <!-- Sign in button -->
+            <button class="form-control" class=" btn btn-success" (click)="upgradePackage()">Update</button>
+
+
+        </form>
+        <!-- Default form subscription -->
+
+    </mdb-card-body>
+    <!--/.Card content-->
+
+    <!--/.Card-->
+
+</div>

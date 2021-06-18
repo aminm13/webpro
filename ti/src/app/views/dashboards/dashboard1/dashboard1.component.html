@@ -1,0 +1,58 @@
+<mdb-card class="mb-4 wow fadeIn">
+
+    <!--Card content-->
+    <mdb-card-body class="d-sm-flex justify-content-between">
+
+        <p class="mb-sm-0 pt-3">
+            Welcome back {{auth.name}}
+        </p>
+
+    </mdb-card-body>
+
+</mdb-card>
+
+<div class="main">
+
+    <div class="row">
+        <div class="col-4">
+            <div class="container">
+                <div class="package" *ngIf="showStudent">
+                    <app-package></app-package>
+                </div>
+                <div class="package" *ngIf="showTutor">
+                    <app-qualification></app-qualification>
+                </div>
+                <div class="package widener" *ngIf="showCoordinator || showAdmin">
+                    <div class="card-title p-2 bg-dark text-white">Available teachers:</div>
+                    <div class="card-body overflow-auto tutors">
+                        <app-tutor-filter></app-tutor-filter>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="courses" *ngIf="showStudent">
+            <div class="card-title p-2 bg-dark text-white">All Courses:</div>
+            <div class="card-body overflow-auto tutors">
+                <app-student-course></app-student-course>
+            </div>
+        </div>
+        <div class="courses" *ngIf="showTutor">
+            <div class="card-title p-2 bg-dark text-white">All Reviews:</div>
+            <div class="card-body overflow-auto tutors">
+                <app-tutor-reviews></app-tutor-reviews>
+            </div>
+        </div>
+        <div class="courses" *ngIf="showCoordinator || showAdmin">
+            <div class="card-title p-2 bg-dark text-white">All Students:</div>
+            <div class="card-body overflow-auto tutors">
+                <app-assign-student></app-assign-student>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

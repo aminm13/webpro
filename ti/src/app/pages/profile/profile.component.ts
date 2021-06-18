@@ -11,20 +11,20 @@ export class ProfileComponent implements OnInit {
   auth = JSON.parse(localStorage.getItem('user'));
   role = JSON.parse(localStorage.getItem('role'));
   q = JSON.parse(localStorage.getItem('qualification'));
-  
-  showStudent:boolean ;
+
+  showStudent: boolean;
   showTutor: boolean;
   showCoordinator: boolean;
-  showAdded:boolean=false;
+  showAdded: boolean = false;
 
-  
 
-  addStudent(){
-      this.showAdded = true;
+
+  addStudent() {
+    this.showAdded = true;
   }
 
-  addQualification(){
-    
+  addQualification() {
+
   }
 
   constructor() { }
@@ -33,20 +33,20 @@ export class ProfileComponent implements OnInit {
 
     console.log(this.role[0].role_id)
 
-    
+
 
     if (this.role[0].role_id == 1) {
-       this.showStudent = true
+      this.showStudent = true
     }
-    else{
+    else {
       if (this.role[0].role_id == 2) {
         this.showTutor = true
-     }
-     else{
-      if (this.role[0].role_id == 3) {
-        this.showCoordinator = true
-     }
-     }
+      }
+      else {
+        if (this.role[0].role_id == 3) {
+          this.showCoordinator = true
+        }
+      }
 
     }
 

@@ -51,7 +51,7 @@ import { AvailablePacksComponent } from './available-packs/available-packs.compo
     }),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot() // ToastrModule added
-    
+
   ]
 })
 export class PageModule { }

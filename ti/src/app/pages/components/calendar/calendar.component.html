@@ -54,7 +54,7 @@
       </mwl-calendar-day-view>
     </div>
   </div>
-  <div class="card-footer" *ngIf="showCoordinator || showTutor">
+  <div class="card-footer">
     <h3>
       Edit events
       <button class="btn btn-primary float-right" (click)="addEvent()">
@@ -89,13 +89,11 @@
             </td>
             <td>
               <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start"
-                (ngModelChange)="refresh.next()"  
-                dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set" />
+                (ngModelChange)="refresh.next()" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set" />
             </td>
             <td>
               <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.end"
-                (ngModelChange)="refresh.next()"  
-                dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set" />
+                (ngModelChange)="refresh.next()" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set" />
             </td>
             <td>
               <button class="btn btn-danger" (click)="deleteEvent(event)">
@@ -132,5 +130,3 @@
     </button>
   </div>
 </ng-template>
-
-
