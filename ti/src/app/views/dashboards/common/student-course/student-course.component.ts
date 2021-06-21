@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-student-course',
@@ -10,74 +10,87 @@ import { FormGroup } from '@angular/forms';
 export class StudentCourseComponent implements OnInit {
   tutor_id: any;
 
+  TutorList: any;
+  TutorsList: any;
   constructor(private http: HttpClient) { }
   CourseList: any;
 
   form: FormGroup;
 
   writeNewReview() {
-    this.http.post(`http://localhost:8000/api/filter/writeReview`, { student: 2, tutor: 3, text: "check check check" }).subscribe(
+    this.http.post(`http://localhost:8000/api/filter/writeReview`, this.form.value).subscribe(
       data => {
         console.log(data)
       })
   }
+
+
+
   ngOnInit(): void {
 
+    this.form = new FormGroup({
+      student: new FormControl(null, Validators.required),
+      tutor: new FormControl(null, Validators.required),
+      reviewbyStudent: new FormControl(null, Validators.required),
+      starGiven: new FormControl(null, Validators.required),
 
-    // this.http.get(`http://localhost:8000/api/filter/getAllReviewsS`).subscribe(
-    //   data => {
-    //     this.CourseList = data;
-    //     console.log(this.CourseList)
-    //     var i;
-    //     var div = document.getElementById("tutor");
-    //     if (div !== null) {
-    //       div.innerHTML = ''
-    //       div.innerHTML += `<style>
-    //       .filterContainer{
-    //         margin-top:0;
-    //         width100%;
-    //         height:15hv;
-    //         border-bottom:dotted 1px 	#A9A9A9;
-    //         margin-bottom:1rem;
-    //       }
-    //         .qualification{
-    //           margin-right:0.2rem;
-    //           text-transform: uppercase;
-    //         }
-    //         #tutorName{
-    //           font-size: 18px;
-    //           width: 12rem;
-    //           padding: 0;
-    //           margin-right:0 ;
-    //           margin-left:0 ;
-    //           padding-bottom: 1rem;
-    //       }
-    //       .tutorFilters {
-    //         display: inline-block;
-    //         margin-top: -1rem;
-    //     }
-    //       </style>`
-    //       for (i = 0; i < this.CourseList['courses'].length; i++) {
-    //         // const tempTutor = this.CourseList['courses'][i]
-    //         // this.tutor_id = this.CourseList['reviews'][i]['id']
-    //         div.innerHTML += ` 
-    //         <div class="filterContainer">
+    });
 
-    //         <div id="tutorName"></div>
-    //         <div class="row">
-    //         <div class="col-6">
-    //         <div class="tutorFilters ">
-    //        `
-    //       }
+    const teachersList = [
+      'Elahe', 'Elahe2', 'Elahe3', 'Elahe4', 'Elahe5', 'Elahe6'
+    ]
+    const coursesList = [
+      'Physic', 'math', 'algebra', 'chemistry', 'biology', 'advanced physics', 'thermodynamics'
+    ]
 
-    //       div.innerHTML += `</div>`
-    //     }
+    this.http.get(`http://localhost:8000/api/filter/getAllReviewsS`).subscribe(
+      data => {
+        this.CourseList = data;
+        // console.log(this.CourseList)
+        var i;
+
+        for (i = 0; i < this.CourseList['tutor'].length; i++) {
+
+          const tempTutor = this.CourseList['tutor'][i]
+          const tempCourse = this.CourseList['courses']
+
+          console.log()
+          console.log(tempCourse[i]['qualification_id'])
+          // console.log("br")
+
+          var div = document.getElementById("courses");
+
+          if (div !== null) {
+            div.innerHTML += `
+            <div class="col-6" 
+
+            <div class="card text-body bg-info mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><p><small>Tutor: </small> <strong>${teachersList[tempTutor['tutor']]}</strong</p> </h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+    ${coursesList[tempCourse[i]['qualification_id']]}
+    </h6>
+    <p class="card-text">
+    <div class="progress">
+    <div class="progress-bar bg blue darken-2" role="progressbar" style="width: 25%" aria-valuenow="${i * 10}"
+        aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<p >${19 + i * 5} Days remaining</p>
+    </p>
+
+  </div>
+</div>
+            </div>
+            `
+          }
 
 
-    //   },
-    //   err => {
-    //     console.log(err);
-    //   });
+        }
+
+      },
+      err => {
+        console.log(err);
+      });
 
 
   }

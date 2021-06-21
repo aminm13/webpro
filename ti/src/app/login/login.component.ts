@@ -17,8 +17,7 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    localStorage.setItem('role', '10')
-    console.log(localStorage.getItem('role'))
+
     this.form = new FormGroup({
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)

@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    localStorage.setItem('role', '10')
+    console.log(localStorage.getItem('role'))
   }
 
 }

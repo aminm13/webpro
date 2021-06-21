@@ -18,6 +18,7 @@ class CreateCourseTutorStudentTable extends Migration
             $table->integer('tutor')->unasigned();
             $table->integer('student')->unasigned();
             $table->string('reviewbyStudent')->nullable();
+            $table->integer('starGiven')->unasigned();
 
             $table->timestamps();
         }); 

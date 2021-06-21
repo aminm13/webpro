@@ -27,6 +27,7 @@ class ReviewRequest extends FormRequest
             'student' => 'required',
             'tutor' => 'required',
             'reviewbyStudent' => 'required',
+            'starGiven' => 'required',
         ];
     }
 }

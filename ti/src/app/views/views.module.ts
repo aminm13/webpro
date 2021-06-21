@@ -1,4 +1,4 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +25,8 @@ import { AssignStudentComponent } from './dashboards/common/assign-student/assig
 import { QualificationComponent } from './dashboards/common/qualification/qualification.component';
 import { TutorReviewsComponent } from './dashboards/common/tutor-reviews/tutor-reviews.component';
 import { StudentCourseComponent } from './dashboards/common/student-course/student-course.component';
+import { HistoryComponent } from './history/history.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   imports: [
@@ -32,6 +34,7 @@ import { StudentCourseComponent } from './dashboards/common/student-course/stude
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxStarRatingModule,
 
     BrowserModule,
     BrowserAnimationsModule,
@@ -61,6 +64,7 @@ import { StudentCourseComponent } from './dashboards/common/student-course/stude
     QualificationComponent,
     TutorReviewsComponent,
     StudentCourseComponent,
+    HistoryComponent,
 
   ],
   exports: [
@@ -73,6 +77,6 @@ import { StudentCourseComponent } from './dashboards/common/student-course/stude
     Dashboard1Component,
 
   ],
-  schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ViewsModule { }

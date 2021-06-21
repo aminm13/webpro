@@ -26,7 +26,7 @@ export class TutorReviewsComponent implements OnInit {
     this.http.get(`http://localhost:8000/api/filter/getAllReviewsT`).subscribe(
       data => {
         this.ReviewList = data;
-        console.log(this.ReviewList['reviews'][0])
+        console.log(this.ReviewList['authors'])
         var i;
         var div = document.getElementById("student");
 
@@ -58,13 +58,13 @@ export class TutorReviewsComponent implements OnInit {
             margin-top: -1rem;
         }
           </style>`
-          for (i = 0; i < this.ReviewList['reviews'].length; i++) {
+          for (i = 0; i < this.ReviewList['authors'].length; i++) {
             const tempTutor = this.ReviewList['reviews'][i]
-            this.student_id = this.ReviewList['reviews'][i]['id']
+            this.student_id = this.ReviewList['authors'][i]['student']
             div.innerHTML += ` 
             <div class="filterContainer">
 
-            <div id="tutorName"><p>From - Matt </p></div>
+            <div id="tutorName"><p>From - Amin${this.student_id}  </p></div>
             <div class="row">
             <div class="col-6">
             <div class="tutorFilters ">

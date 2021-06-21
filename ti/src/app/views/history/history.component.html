@@ -1,0 +1,56 @@
+<div class="row mt-5">
+    <div class="col-md-12">
+        <!--Card-->
+        <mdb-card cascade="true" narrower="true" class="mt-5">
+            <!--Card image-->
+            <div class="view gradient-card-header blue darken-2">
+                <h4 class="h4-responsive text-white">Transactions </h4>
+            </div>
+            <!--/Card image-->
+            <!--Card content-->
+            <mdb-card-body>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr *ngIf="showStudent">
+                            <th>#</th>
+                            <th>Package Name</th>
+                            <th>Price</th>
+                            <th>Date</th>
+                            <th>Status</th>
+
+                        </tr>
+                        <tr *ngIf="showTutor">
+                            <th>#</th>
+                            <th>Subject</th>
+                            <th>Price</th>
+                            <th>Date</th>
+                            <th>Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="showStudent">
+                            <th scope="row">1</th>
+                            <td>Ideal Pack</td>
+                            <td>1200$</td>
+                            <td>Today</td>
+                            <td><i class="fas fa-check-circle"></i></td>
+                        </tr>
+                        <tr *ngIf="showTutor">
+                            <th scope="row">1</th>
+                            <td>Algebra extras</td>
+                            <td>1200$</td>
+                            <td>Today</td>
+                            <td><i class="fas fa-check-circle"></i></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </mdb-card-body>
+            <!--/.Card content-->
+        </mdb-card>
+        <!--/.Card-->
+    </div>
+</div>

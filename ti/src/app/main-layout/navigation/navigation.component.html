@@ -1,9 +1,9 @@
 <!--Main Navigation-->
 
-<header *ngIf="navShow">
+<header *ngIf="navShow" id="wrapper" class="toggled">
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed" data-mdb-color="secondary">
 
         <a class="logo-wrapper waves-effect">
             <img src="../../../assets/img/logo.png" class="img-fluid" alt="">
@@ -30,14 +30,23 @@
             </a>
             <a routerLink="maps/map1" routerLinkActive="active"
                 class="list-group-item list-group-item-action waves-effect">
+                <mdb-icon far icon="map" class="mr-3"></mdb-icon>Calendar
+            </a>
+            <a routerLink="history" routerLinkActive="active"
+                class="list-group-item list-group-item-action waves-effect">
                 <mdb-icon far icon="map" class="mr-3"></mdb-icon>History
             </a>
-            <a routerLink="nonExistingPath" routerLinkActive="active"
-                class="list-group-item list-group-item-action waves-effect">
+            <a (click)="logout()" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
                 <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Logout
             </a>
 
         </div>
+        <hr />
+        <select class="custom-select" (change)="changeLang($event.target.value)">
+            <option>Select Your Language</option>
+            <option value="en" [selected]="lang== 'en'">English</option>
+            <option value="es" [selected]="lang== 'es'">española</option>
+        </select>
 
     </div>
     <!-- Sidebar -->

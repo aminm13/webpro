@@ -26,6 +26,8 @@ class AssignRequest extends FormRequest
         return [
             'student'      => 'required|numeric',
             'tutor'      => 'required|numeric',
+            'reviewbyStudent'      => 'required|string',
+
         ];
     }
 }

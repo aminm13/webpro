@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Events\FilterTutorEvent;
 use Illuminate\Http\Request;
 use App\Http\Requests\AssignRequest;
+use App\Http\Requests\ReviewRequest;
 
 use App\Role;
 use App\User;
@@ -31,20 +32,22 @@ class FilterController extends Controller
         ]);
     }
 
-    public  function writeReview (AssignRequest $request)
+    public  function writeReview (ReviewRequest $request)
     {
 
         $user_id = $request->only(['student'][0])['student'];
         $tutor_id = $request->only(['tutor'][0])['tutor'];
         $text = $request->only(['reviewbyStudent'][0])['reviewbyStudent'];
+        $starGiven = $request->only(['starGiven'][0])['starGiven'];
         
-         DB::insert('insert into course_tutor_studnet (tutor, student,reviewbyStudent) values (?, ?,?)', [1, 4 , $text]);
+         DB::insert('insert into course_tutor_studnet (tutor, student,reviewbyStudent,starGiven) values (?, ?,?,?)', [1, 4 , $text,$starGiven]);
         return response()->json([
 
             'ok' => true,
             'user' => $user_id,
             'tutor' => $tutor_id,
-            'review' => $text
+            'review' => $text,
+            'star' => $starGiven
         ]);
     }
     
@@ -70,10 +73,10 @@ class FilterController extends Controller
 
     public function getAllReviewsS(){
         
-        $tutor  = DB::table('course_tutor_studnet')->select('tutor')
+        $tutor  = DB::table('course_tutor_studnet')->select('tutor')->distinct()
         ->where('student',1)->get();
 
-        $courses  = DB::table('qualification_user')->select('qualification_id')
+        $courses  = DB::table('qualification_user')->select('qualification_id')->distinct()
         ->where('user_id',4)->get();
 
         return response()->json([
@@ -87,9 +90,9 @@ class FilterController extends Controller
     public function getAllReviewsT(){
         
         $tReviews  = DB::table('course_tutor_studnet')->select('reviewbyStudent')
-        ->where('tutor',1)->get();
+        ->where('student',1)->get();
         $tAuthors  = DB::table('course_tutor_studnet')->select('student')
-        ->where('tutor',1)->get();
+        ->where('tutor',4)->get();
 
         return response()->json([
 

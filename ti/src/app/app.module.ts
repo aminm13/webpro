@@ -17,7 +17,7 @@ import { Profile1Component } from './views/profile/profile1/profile1.component';
 import { NotFoundComponent } from './views/errors/not-found/not-found.component';
 import { Dashboard1Component } from './views/dashboards/dashboard1/dashboard1.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // main layout
 import { NavigationModule } from './main-layout/navigation/navigation.module';
@@ -25,9 +25,19 @@ import { LoginComponent } from './login/login.component';
 import { Profile2Component } from './views/profile/profile2/profile2.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HistoryComponent } from './views/history/history.component';
+import { LanguageInterceptor } from './interceptors/language.interceptor';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 const routes: Route[] = [
+  { path: '', component: HomeComponent },
+
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
 
   {
     path: 'dashboards', children:
@@ -35,6 +45,7 @@ const routes: Route[] = [
         { path: 'v1', component: Dashboard1Component },
       ]
   },
+  { path: 'history', component: HistoryComponent },
   {
     path: 'profiles', children:
       [
@@ -83,9 +94,23 @@ const routes: Route[] = [
     ViewsModule,
     ErrorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LanguageInterceptor,
+      multi: true
+    },
+    HttpClient
+  ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })

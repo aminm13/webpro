@@ -1,12 +1,54 @@
-<div id="tutor">
+<section class="mt-lg-5">
 
 
-</div>
+    <div class="row" id="courses">
+    </div>
 
-<form class="form-group" method="POST">
-    <p>Write us some words about your teacher</p>
-    <textarea>
+    <!--/.Card-->
 
+    <hr />
+    <div class="reviewSection">
+
+
+        <form [formGroup]="form" (ngSubmit)="writeNewReview()" class="form-group" method="POST">
+
+            <div class="card  text-center h-70 w-70">
+                <h4>Rate your tutors</h4>
+
+                <div class="card-header">
+                    <p class="card-text">
+                        <label>Select Tutor</label>
+                        <br />
+                        <select formControlName="tutor" ngModel>
+                            <option value="">Select Tutor</option>
+                            <option value="4">Elahe1</option>
+                            <option value="5">Elahe2</option>
+                            <option value="6">Elahe3</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <label>How did you find the tutor?This time you can grade them</label>
+                    <ngx-star-rating formControlName="starGiven" [id]="'rating'"></ngx-star-rating>
+
+                </div>
+                <label>Please explain further here </label>
+                <textarea class="card-body" formControlName="reviewbyStudent" ngModel
+                    placeholder="Write us some words about your teacher">
     </textarea>
-    <button (click)="writeNewReview">addd</button>
-</form>
+
+                <div class="card-footer">
+                    <small>
+                        <label>Please put your student ID for security reasons</label>
+                        <br />
+                        <input type="number" formControlName="student" ngModel />
+                    </small>
+                    <hr />
+                    <button class="btn btn-info" type="submit">Send</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>

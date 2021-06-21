@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
-
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -21,9 +20,22 @@ export class NavigationComponent implements OnInit {
     this.clicked = this.clicked === undefined ? false : true;
   }
 
-  ngOnInit() {
 
-    if (this.role === 10) {
+  logout() {
+    localStorage.clear();
+    window.location.replace('login')
+  }
+  changeLang(lang: any) {
+    localStorage.setItem('lang', lang)
+    window.location.reload()
+  }
+
+  ngOnInit() {
+    console.log(localStorage.getItem('role'))
+    if (this.role == 10) {
+      this.navShow = false
+    }
+    else {
       this.navShow = true
     }
 
